@@ -28343,13 +28343,16 @@ f5SPk+AMuGWcAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="How-to-run-CosmoMC-on-Sciama">How to run CosmoMC on Sciama<a class="anchor-link" href="#How-to-run-CosmoMC-on-Sciama">&#182;</a></h3><p>(Note: these notes based on how things worked on the old Sciama: some things may have changed after the upgrade. Notes compiled together with Hans Winther.)</p>
-<p>1] Import the following modules and the Planck likelihood plc
-    module purge
-    export MODULEPATH=$NEW_MODULEPATH
-    module load system
-    module load intel_comp/2016.2
-    module load openmpi/2.0.2
-    module load plc/2.0</p>
+<p>1] Import the following modules and the Planck likelihood plc</p>
+
+<pre><code>module purge
+export MODULEPATH=$NEW_MODULEPATH
+module load system
+module load intel_comp/2016.2
+module load openmpi/2.0.2
+module load plc/2.0
+
+</code></pre>
 <p>2] Add [CLIK_PATH = /opt/apps/clik/2.0/intel64/intel_2016.2/] to the top of CosmoMC/source/Makefile</p>
 <p>3] Compile CosmoMC [ make ]</p>
 <p>4] <em>Optional</em>: Compile getdist [ make getdist ]</p>
