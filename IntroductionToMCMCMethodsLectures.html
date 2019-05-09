@@ -28357,18 +28357,18 @@ module load plc/2.0
 <p>3] Compile CosmoMC [ make ]</p>
 <p>4] <em>Optional</em>: Compile getdist [ make getdist ]</p>
 <p>5] Edit the file CosmoMC/test.ini to set analysis options and choose which datasets to fit</p>
-
-<pre><code>- data files are separated into different batch folders (batch1/, batch2/ and batch3/ roughly representing the state of cosmology data at the time of the 1st, 2nd and 3rd Planck data releases)
-
-- for instance, uncommenting the line DEFAULT(batch3/BAO.ini) in CosmoMC/test.ini will include fits to the most up-to-date BAO results used by Planck 2018; inserting DEFAULT(batch3/BAO_RSD.ini) instead will include BAO+RSD results, DEFAULT(batch3/JLA.ini) will add JLA supernova results etc.
-
-- view the file in question (e.g. batch3/BAO.ini) to see which results are included (in this case, BOSS DR12 BAO consensus, 6dF and SDSS MGS) and edit as required [Note: .ini files frequently point to other .ini files in a heirarchy!]
-
-- if you want to add fits to some new data replacing/updating existing data (e.g., a re-analysis of BOSS DR12 BAO) then examine the heirarchy of .ini files to find the final .dataset file they point to (will be in the folder CosmoMC/data/), and edit that (or, better, edit a copy of it and change the path the .ini files point to)
-
-- in each batchX/ folder, there are files called common.ini and params_CMB_default.ini. If you want to add any parameters to the model (e.g. neutrino mass) or to change any settings for the run (e.g., convergence criterion, sampling method, etc.), either edit relevant lines here or (better) add the relevant lines to the test.ini file where they will override
-
-</code></pre>
+<ul>
+<li><p>data files are separated into different batch folders (batch1/, batch2/ and batch3/ roughly representing the state of cosmology data at the time of the 1st, 2nd and 3rd Planck data releases)</p>
+</li>
+<li><p>for instance, uncommenting the line DEFAULT(batch3/BAO.ini) in CosmoMC/test.ini will include fits to the most up-to-date BAO results used by Planck 2018; inserting DEFAULT(batch3/BAO_RSD.ini) instead will include BAO+RSD results, DEFAULT(batch3/JLA.ini) will add JLA supernova results etc.</p>
+</li>
+<li><p>view the file in question (e.g. batch3/BAO.ini) to see which results are included (in this case, BOSS DR12 BAO consensus, 6dF and SDSS MGS) and edit as required [Note: .ini files frequently point to other .ini files in a heirarchy!]</p>
+</li>
+<li><p>if you want to add fits to some new data replacing/updating existing data (e.g., a re-analysis of BOSS DR12 BAO) then examine the heirarchy of .ini files to find the final .dataset file they point to (will be in the folder CosmoMC/data/), and edit that (or, better, edit a copy of it and change the path the .ini files point to)</p>
+</li>
+<li><p>in each batchX/ folder, there are files called common.ini and params_CMB_default.ini. If you want to add any parameters to the model (e.g. neutrino mass) or to change any settings for the run (e.g., convergence criterion, sampling method, etc.), either edit relevant lines here or (better) add the relevant lines to the test.ini file where they will override</p>
+</li>
+</ul>
 <p>6] Create a directory to store the output of your run, cd to this directory</p>
 <p>7] Submit the following job to the Sciama queue:</p>
 <p>mpirun -np 8 \$cosmomc \$paramfile</p>
