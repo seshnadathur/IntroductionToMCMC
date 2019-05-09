@@ -28371,7 +28371,7 @@ module load plc/2.0
 </ul>
 <p>6] Create a directory to store the output of your run, cd to this directory</p>
 <p>7] Submit the following job to the Sciama queue:</p>
-<p>mpirun -np 8 \$cosmomc \$paramfile</p>
+<p>mpirun -np 8 cosmomc paramfile</p>
 <p>where cosmomc="/path/to/the/cosmomc/executable/from/step/3/", and paramfile="/path/to/the/highest/level/ini/file/"</p>
 <p>Option -np 8 will automatically start 8 chains from different initial points, and will assess their convergence on-the-fly, stopping once they reach the desired convergence criterion (by default, Gelman-Rubin criterion R &lt; 0.05)</p>
 <p>8] When your chains have finished, analyse the folder using GetDist</p>
